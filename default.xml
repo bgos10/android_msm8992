@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-  <remote fetch="https://source.codeaurora.org/quic/la/" name="caf" review="codeaurora.org"/>
-  <default remote="caf" revision="LA.BF64.1.2.3_rb1.16"/>
+	  <remote  name="github"
+           fetch="https://github.com/" />
+
+  <remote  name="aosp"
+           fetch="https://android.googlesource.com"
+           review="android-review.googlesource.com"
+           revision="refs/tags/android-8.0.0_r3" />
+
+  <remote name="caf"
+		  fetch="https://source.codeaurora.org/quic/la/"
+		  review="codeaurora.org"/>
+  
+  <default 
+		  revision="LA.BF64.1.2.3_rb1.16"
+		  remote="caf" 
+		  sync-j="8"
+		  sync-c="true"/>
+
   <project groups="pdk-cw-fs,pdk-fs" name="device/common" revision="a878d7f1136308d3ef3485bd0bcfbf479ff3b9a4" upstream="LA.BF64.1.2.3_rb1.16"/>
   <project groups="pdk" name="device/generic/arm64" revision="02f7fd53c95e91f8a96293454f079da3060f6f59" upstream="LA.BF64.1.2.3_rb1.16"/>
   <project groups="pdk" name="device/generic/armv7-a-neon" revision="903de3fe0a6a761aec00c1503e2ca061adbf37d9" upstream="LA.BF64.1.2.3_rb1.16"/>
@@ -512,4 +528,6 @@
   <project name="platform/vendor/qcom/msm8992" path="device/qcom/msm8992" revision="b766ae9b9e7ef59e82eff4c923a928941dfc0d30" upstream="LA.BF64.1.2.3_rb1.16"/>
   <project name="platform/vendor/qcom/plutonium" path="device/qcom/msm8994" revision="393430c1feed7f1cc54de4fabbf63f4b07bdd38e" upstream="LA.BF64.1.2.3_rb1.16"/>
   <project name="toolchain/binutils" revision="edd2dff23373691ae99fe7b0643ec9632bcfe692" upstream="LA.BF64.1.2.3_rb1.16"/>
+<!-- Remove -->
+  <include name="snippets/remove.xml" />
 </manifest>
